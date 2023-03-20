@@ -1,0 +1,21 @@
+<div>
+<app-toolbar></app-toolbar>
+</div>
+<div class="background">
+  <div class="tab-container">
+    <button class="tab-btn" [ngClass]="{'active': selectedTab === 1}" (click)="selectedTab = 1">Registration</button>
+    <button class="tab-btn" [ngClass]="{'active': selectedTab === 2}" (click)="selectedTab = 2">Student Details</button>
+    <button class="tab-btn" [ngClass]="{'active': selectedTab === 3}" (click)="selectedTab = 3">Fees Details</button>
+    <button class="tab-btn" [ngClass]="{'active': selectedTab === 4}" (click)="selectedTab = 4">Delete Student  record</button>
+    <button class="tab-btn" [ngClass]="{'active': selectedTab === 5}" (click)="selectedTab = 5">Student Grades</button>
+
+  </div>
+  <div class="tab-content">
+    <app-register *ngIf="selectedTab === 1"></app-register>
+    <app-department *ngIf="selectedTab === 2"></app-department>
+    <app-studentfees *ngIf="selectedTab === 3"></app-studentfees>
+    <app-deletestudent *ngIf="selectedTab === 4"></app-deletestudent>
+    <app-displaygrade *ngIf="selectedTab === 5"></app-displaygrade>
+
+  </div>
+</div>

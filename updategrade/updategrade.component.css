@@ -1,0 +1,49 @@
+/* Styles for the container div */
+div {
+    margin: 10px;
+    padding: 10px;
+    background-color: #f7f3f3c2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Styles for the headings */
+  h4 {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #2b2b2b;
+  }
+  
+  /* Styles for the subject labels */
+  label {
+    font-weight: bold;
+    margin-right: 5px;
+    font-size: 1rem;
+    color: #2b2b2b;
+    line-height: 0.9rem; /* replace with your desired line height */
+  }
+  
+  /* Styles for the input fields */
+  input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 5px solid #E0E0E0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #2b2b2b;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 100%;
+    margin-bottom: 2px;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #8ebb9f;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  

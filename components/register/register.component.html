@@ -1,0 +1,66 @@
+<div class="container">
+  <h2>Student Registration Form</h2>
+  <fieldset>
+    <form>
+      <div>
+        <label>FullName</label>
+        <input matInput type="text" [(ngModel)]="fullName" name="fullName"><br><br>
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" [(ngModel)]="email" name="email"><br><br>
+      </div>
+      <div>
+        <label>PhoneNumber</label>
+        <input type="text" [(ngModel)]="phoneNumber" name="phoneNumber"><br><br>
+      </div>
+      <div>
+        <label>Address:</label>
+        <textarea [(ngModel)]="address" name="address"></textarea><br><br>
+      </div>
+      <div>
+        <label>Department:</label>
+        <select [(ngModel)]="department" name="department" id="department">
+          <option value="CSE">CSE</option>
+          <option value="ENTC">ENTC</option>
+          <option value="Mechanical">Mechanical</option>
+          <option value="Civil">Civil</option>
+          <option value="Biotech">Biotech</option>
+        </select><br><br>
+      </div>
+      <div>
+        <label>Year:</label>
+        <select [(ngModel)]="year" name="year" id="year">
+          <option value="FY">FY</option>
+          <option value="SY">SY</option>
+          <option value="TY">TY</option>
+          <option value="FinalYear">FinalYear</option>
+        </select><br><br>
+      </div>
+      <div>
+        <label>PayFees:</label>
+        <select [(ngModel)]="feespaid" name="feespaid" id="feespaid">
+          <option value=20000>20000</option>
+          <option value=25000>25000</option>
+          <option value=40000>40000</option>
+          <option value=60000>60000</option>
+          <option value=80000>80000</option>
+        </select><br><br>
+      </div>
+      <button type="submit" mat-raised-button color="primary" (click)="searchButtonClicked = true;onSubmit()" style="margin-left: 230px;background-color: rgb(179, 125, 171);">Register</button>
+    </form>
+  </fieldset>
+  <mat-card *ngIf="searchButtonClicked">
+    <fieldset>
+      <mat-card style="background-color: #8ebb9fb9;margin-right: 100px;">
+        <mat-card-header>
+          <mat-card-title>YOUR PRN IS : &nbsp;</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+        {{studentPRN}}
+        </mat-card-content>
+      </mat-card>
+    </fieldset>
+
+  </mat-card>
+</div>

@@ -1,0 +1,29 @@
+<div>
+<app-toolbar></app-toolbar>
+</div>
+<div style="margin: 50px;">
+    <h4 style="color: rgba(102, 35, 165, 0.849);">Current marks for {{ PRNstudent }} are:</h4>
+    <div *ngFor="let subject of subinfolist">
+      <label for="subject">{{ subject.key }}: {{ subject.value }}</label><br>
+    </div>
+    <br>
+  
+    <h4 style="color: rgba(90, 25, 151, 0.733);">Updated marks:</h4>
+    <div>
+      <label for="subject1">{{ subinfolist[0].key }}:</label>
+      <input type="number" [(ngModel)]="updatedmarks[0]" style="margin-left: 10px;">
+      
+  
+      <label for="subject2">{{ subinfolist[1].key }}:</label>
+      <input type="number" [(ngModel)]="updatedmarks[1]" style="margin-left: 10px;">
+     
+  
+      <label for="subject3">{{ subinfolist[2].key }}:</label>
+      <input type="number" [(ngModel)]="updatedmarks[2]" style="margin-left: 10px;">
+    </div><br>
+  
+    <button type="submit" mat-raised-button color="primary"
+      style="background-color: #8ebb9fb9; margin-left: 30px;"
+      (click)="subjectfun(); studentsub()">Update marks</button>
+  </div>
+  

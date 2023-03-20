@@ -1,0 +1,57 @@
+
+<fieldset style="background-color: rgba(177, 218, 192, 0.856);">
+  <div>
+    <div>
+      <label>Department</label>
+      <select [(ngModel)]="department" name="department" id="department">
+        <option value="CSE">CSE</option>
+        <option value="ENTC">ENTC</option>
+        <option value="Mechanical">Mechanical</option>
+        <option value="Civil">Civil</option>
+        <option value="Biotech">Biotech</option>
+      </select><br><br>
+    </div>
+    <div>
+      <label>Year</label>
+      <select [(ngModel)]="year" name="year" id="year">
+        <option value="FY">FY</option>
+        <option value="SY">SY</option>
+        <option value="TY">TY</option>
+        <option value="FinalYear">FinalYear</option>
+      </select><br>
+    </div>
+  </div>
+  <button  type="submit" mat-raised-button color="primary" class="custom-button" style="margin-top: 10px; margin-left: 230px; background-color:
+ grey;" (click)="searchButtonClicked = true; getinfo()">Submit</button>
+</fieldset><br><br>
+<div *ngIf="searchButtonClicked">
+  <table style="border-collapse: collapse; width: 100%;">
+    <tr style="border: 1px solid black;background-color: rgba(187, 187, 122, 0.836);">
+      <th style="border: 1px solid black;">Department</th>
+      <th style="border: 1px solid black;">AdmissionYear</th>
+      <th style="border: 1px solid black;">FullName</th>
+      <th style="border: 1px solid black;">PRN</th>
+      <th style="border: 1px solid black;">Email</th>
+      <th style="border: 1px solid black;">phoneNumber</th>
+      <th style="border: 1px solid black;">Address</th>
+      <th style="border: 1px solid black;">FeesPaid</th>
+      <!-- <th style="border: 1px solid black;">subjects</th> -->
+      
+      <th style="border: 1px solid black;">UpdateGrades</th>
+      
+    </tr>
+    <tr *ngFor="let i of list " style="border: 1px solid black ; background-color: beige;">
+      <td style="border: 1px solid black;">{{i.value.department}}</td>
+      <td style="border: 1px solid black;">{{i.value.year}}</td>
+      <td style="border: 1px solid black;">{{i.value.fullName}}</td>
+      <td style="border: 1px solid black;">{{i.key}}</td>
+      <td style="border: 1px solid black;">{{i.value.email}}</td>
+      <td style="border: 1px solid black;">{{i.value.phoneNumber}}</td>
+      <td style="border: 1px solid black;">{{i.value.address}}</td>
+      <td style="border: 1px solid black;">{{i.value.feespaid}}</td>
+      <!-- <td style="border: 1px solid black;">{{i.value.subjectMarks}}</td> -->
+      <!-- <td *ngfor="let j of i.value.subjectMarks">{{j.value}}</td> -->
+      <td style="border: 1px solid black;"><button  type="submit" mat-raised-button color="primary" style="background-color: #8ebb9fb9;" (click)="sessionPRN(i.key, i.value.fullName,i.value.department,i.value.year);sendsubject(i.value.subjectMarks)" >Update Grades</button></td>
+    </tr>
+  </table>
+</div>

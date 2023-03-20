@@ -1,0 +1,18 @@
+<div >
+  <label for="Search by PRN" ></label>
+  <input type="text" placeholder="Enter Your PRN" [(ngModel)]="PRN">
+  <button (click)="searchButtonClicked = true;splitPRN();getinfo()">Search</button><br><br>
+  <div *ngIf="searchButtonClicked" class="block" style="margin-top: 10px;">
+  <div *ngIf="searchButtonClicked">
+   <br><br>
+  <label for="Totalfees" >Total fees: &nbsp;{{totalfees}}</label><br><br>
+  <label for="fees paid" >FeesPaid: &nbsp; {{details}} </label><br><br>
+  <label for="remaining fees" >Remaining fees: &nbsp; {{remainingfees}}</label><br><br>
+  <button type="submit" mat-raised-button color="primary" style="background-color: rgb(187, 153, 182);" (click)="payButtonClicked = true;">&nbsp; Pay Now</button><br><br>
+</div>
+  <label for="" *ngIf="payButtonClicked">Enter the amount: &nbsp;</label>
+  <input type="number" [(ngModel)]="amount" *ngIf="payButtonClicked"><br><br>
+  <button class="custom-class" type="submit" mat-raised-button color="primary" style="background-color: rgb(204, 175, 200);"(click)="feesupdate()" *ngIf="payButtonClicked">Make Payment</button>
+</div><br>
+<label for="payment">{{details2}}</label>
+</div>

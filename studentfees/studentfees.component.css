@@ -1,0 +1,18 @@
+div {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+.custom-button {
+  width: 80px;
+  height: 30px;
+}
+.block{
+  border: 1px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(161, 189, 161, 0.274);
+  height: 300px;
+  width: 400px;
+  margin-left: 500px;
+}

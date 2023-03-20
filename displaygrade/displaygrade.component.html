@@ -1,0 +1,22 @@
+
+<div class="container">
+    <label for="Search by PRN" style="margin-top: 30px;">PRN: &nbsp;</label>
+    <input style="height: 33px;" type="text" placeholder=" Enter Your PRN" [(ngModel)]="PRN">
+    <button type="submit" mat-raised-button color="primary"
+      style="margin-left: 20px; background-color: rgb(199, 134, 199);" (click)=" splitPRN(); searchButtonClicked = true;  getinfo() ">
+      search</button><br><br>
+
+  </div><br><br>
+  <div *ngIf="searchButtonClicked">
+    <table style="border-collapse: collapse; width: 100%;">
+      <tr style="border: 1px solid black;background-color: rgba(187, 187, 122, 0.836);">
+        <th style="border: 1px solid black;">Subject</th>
+        <th style="border: 1px solid black;">Marks</th>
+        
+      </tr>
+      <tr *ngFor="let i of list " style="border: 1px solid black ; background-color: beige;">
+        <td style="border: 1px solid black;">{{i.key}}</td>
+        <td style="border: 1px solid black;">{{i.value}}</td>
+       </tr>
+    </table>
+  </div>
